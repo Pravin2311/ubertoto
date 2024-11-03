@@ -158,22 +158,46 @@
         .twitter-floating-button:hover {
             background-color: #1a8cd8;
         }
+        /* Default style for desktop */
+        .fixed-button {
+            position: absolute; /* Change to absolute positioning */
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #e6a100;
+            color: rgb(8, 0, 0);
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            text-decoration: none;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
 
-        /* Media Queries for Responsiveness */
+        /* Button hover effect */
+        .fixed-button:hover {
+            background-color: #d59400;
+        }
+
+        /* Media query to change button content on mobile */
         @media (max-width: 600px) {
-            .affiliate-container, .adsense-container {
-                width: calc(100% - 20px); /* Full width on small screens */
-                height: auto; /* Allow height to adjust based on content */
+            .fixed-button {
+                padding: 10px; /* Reduce padding for mobile */
+                font-size: 1em; /* Increase font size for the icon */
+                width: 20px; /* Set a fixed width */
+                height: 20px; /* Set a fixed height */
+                text-align: center; /* Center the text */
+                line-height: 20px; /* Center the text vertically */
             }
-
-            h3 {
-                font-size: 12px; /* Adjust font size for small screens */
+            .fixed-button::after {
+                content: "?"; /* Change content to "?" */
+                display: block;
+                font-size: 1.5em; /* Increase font size for the icon */
+                color: rgb(8, 0, 0); /* Ensure the color matches */
             }
-
-            .fixed-button, .twitter-floating-button {
-                width: 90%; /* Make buttons wider on small screens */
-                padding: 12px; /* More padding for easier clicking */
-                font-size: 1em; /* Consistent font size */
+            .fixed-button span {
+                display: none; /* Hide the original text */
             }
         }
         
@@ -485,7 +509,7 @@
     <footer style="text-align: center; padding: 10px; background-color: #1E1E1E;">
         <p>&copy; 2024 UberTOTO. All rights reserved.</p>
     </footer>
-    <a href="how-to-find-best-products-in-amazon.html" class="fixed-button">How to Find the Best Product on Amazon</a>
+    <a href="how-to-find-best-products-in-amazon.html" class="fixed-button"><span>How to find best products in Amazon</span></a>
      <!-- Floating Twitter Follow Button -->
      <div class="twitter-floating-button">
         <a href="https://twitter.com/UberTOTO" class="twitter-follow-button" 
