@@ -38,6 +38,22 @@
         .adsense {
             width: 300px; /* Adjust width to fit your ad */
         }
+        /* Styling for the floating Twitter follow button */
+        .twitter-floating-button {
+            position: fixed;              /* Keeps the button floating */
+            top: 50%;                     /* Vertically centers the button */
+            right: 10px;                  /* Positions it slightly away from the right edge */
+            transform: translateY(-50%);  /* Adjusts for exact centering */
+            padding: 10px;
+           /* background-color: whitesmoke; /* Light gray background */
+            border-radius: 5px 0 0 5px;   /* Rounded left side */
+            z-index: 1000;                /* Ensures it appears above other content */
+        }
+
+        /* Optional: Styling for the Twitter button hover effect */
+        .twitter-floating-button:hover {
+            background-color: #1a8cd8;
+        }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7495143337429327"
     crossorigin="anonymous"></script>
@@ -80,6 +96,16 @@
         <a class="buy-now" href="https://amzn.to/4fv78yH">Buy Now</a>
         
         <a href="index.html">Go Back</a>
+        <div class="twitter-floating-button">
+            <a href="https://twitter.com/UberTOTO" class="twitter-follow-button" 
+                data-show-count="false"
+                data-size="large"                
+                data-dnt="true"                  
+                data-show-screen-name="false">   
+                Follow 
+            </a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
     </div>
 </body>
 </html>
