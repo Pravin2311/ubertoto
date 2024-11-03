@@ -15,6 +15,7 @@
     <meta property="og:url" content="https://ubertoto.com"> <!-- Update with your website URL -->
     
     <style>
+
         body {
             background-color: #121212;
             color: white;
@@ -109,7 +110,6 @@
         .buy-button:hover {
             background-color: #ff7f00;
         }
-    
         .enquiry {
             background-color: white; /* Amber color for the Enquiry button */
             color: black;
@@ -124,23 +124,47 @@
         .enquiry:hover {
             background-color: #ff7f00;
         }
+
+        /* Styling for the fixed button in the top-right corner */
+        .fixed-button {
+            position: absolute;  /* Change to absolute positioning */
+            top: 20px;          /* Distance from the top edge */
+            right: 20px;        /* Distance from the right edge */
+            padding: 10px 20px;
+            background-color: #e6a100;
+            color: rgb(8, 0, 0);
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            text-decoration: none;
+            z-index: 1000;      /* Ensures the button is above other content */
+        }
+
+        /* Styling for the floating Twitter follow button */
+        .twitter-floating-button {
+            position: fixed;              /* Keeps the button floating */
+            top: 50%;                     /* Vertically centers the button */
+            right: 10px;                  /* Positions it slightly away from the right edge */
+            transform: translateY(-50%);  /* Adjusts for exact centering */
+            padding: 10px;
+           /* background-color: whitesmoke; /* Light gray background */
+            border-radius: 5px 0 0 5px;   /* Rounded left side */
+            z-index: 1000;                /* Ensures it appears above other content */
+        }
+
+        /* Optional: Styling for the Twitter button hover effect */
+        .twitter-floating-button:hover {
+            background-color: #1a8cd8;
+        }
+        
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7495143337429327"
     crossorigin="anonymous"></script>
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G7Y3QWN0DX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-G7Y3QWN0DX');
-</script>
-
 </head>
 <body>
-    <!-- Website Title -->
+    
     <header>
         <h1>UberTOTO.com</h1>
         <h4>Find the Best Deals, All in One Place! Shop Smarter, Earn More with Every Click!</br>Trending Products. Trusted Reviews. Real Savings. Top Brands. Best Deals.</br></h4>
@@ -442,5 +466,18 @@
     <footer style="text-align: center; padding: 10px; background-color: #1E1E1E;">
         <p>&copy; 2024 UberTOTO. All rights reserved.</p>
     </footer>
+    <a href="how-to-find-best-products-in-amazon.html" class="fixed-button">How to Find the Best Product on Amazon</a>
+     <!-- Floating Twitter Follow Button -->
+     <div class="twitter-floating-button">
+        <a href="https://twitter.com/Ubertotocom" class="twitter-follow-button" 
+            data-show-count="false"
+            data-size="large"                
+            data-dnt="true"                  
+            data-show-screen-name="false">   
+            Follow 
+        </a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
 </body>
 </html>
