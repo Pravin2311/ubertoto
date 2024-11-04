@@ -41,11 +41,12 @@
             color: #ffffff;
             font-size: 20px;
             font-style: oblique;
+            
         }
         .row {
             display: flex;
             justify-content: center;
-            margin: 10px 0;
+            margin: 20px 0;
             flex-wrap: wrap;
         }
         .affiliate-container, .adsense-container {
@@ -54,8 +55,7 @@
             padding: 10px;
             margin: 5px;
             text-align: center;
-            width: calc(100% - 20px); /* Full width with padding */
-            max-width: 150px; /* Max width for larger screens */
+            width: 150px; /* Max width for larger screens */
             height: 250px;
             display: flex;
             flex-direction: column;
@@ -73,8 +73,8 @@
             width: 100%;
         }
         img {
-            max-width: 100%;
-            max-height: auto;
+            max-width: 150%;
+            max-height: 160px;
             object-fit: contain;
             margin: 10px 0;
         }
@@ -200,14 +200,22 @@
         }
         
     </style>
-    <link rel="icon" type="image/png" href="images/fevicon.png">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7495143337429327"
     crossorigin="anonymous"></script>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G7Y3QWN0DX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-G7Y3QWN0DX');
+    </script>
 
     <!-- Floating Twitter Follow Button -->
     <div class="twitter-floating-button">
-        <a href="https://twitter.com/UberTOTO" class="twitter-follow-button" 
+        <a href="https://twitter.com/UberTOTOcom" class="twitter-follow-button" 
             data-show-count="false"
             data-size="large"                
             data-dnt="true"                  
@@ -216,13 +224,12 @@
         </a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-
 </head>
 <body>
     
     <header>
         <h1>UberTOTO.com</h1>
-        <h4>"Find the Best Deals, All in One Place! Shop Smarter, Earn More with Every Click!</br>Trending Products. Trusted Reviews. Real Savings. Top Brands. Best Deals".</br></h4>
+        <h4>"Find the Best Deals, All in One Place! Shop Smarter, Earn More with Every Click!</br>Trending Products. Trusted Reviews. Real Savings. Top Brands. Best Deals"</br></h4>
     </header>
 
     <!-- Rows with Categories and Containers -->
@@ -233,16 +240,22 @@
             <h2>Top products SOLD in 2024</h2>
             <div class="row">
                 <div class="affiliate-container">
+                    <h3>Buy mobile phones</h3>
+                    <img src="images/buy-mobile.JPG" alt="Milton Elite Spin Mop with Bigger Wheels">
+                    <p class="product-description">Spotzero by Milton Elite Spin Mop with Bigger Wheels and Plastic Auto Fold Handle for 360 Degree Cleaning (Aqua Green, Two Refills)</p>
+                    <a href="smartphone-selection-guide.html" target="_blank" class="buy-button">Know More</a>
+                </div>
+                <div class="affiliate-container">
                     <h3>PHILIPS Air Fryer</h3>
                     <img src="images/air-fry.jpg" alt="PHILIPS Air Fryer">
                     <p class="product-description">PHILIPS Air Fryer NA120/00, uses up to 90% less fat, 1500W, 4.2 Liter, with Rapid Air Technology (Black)</p>
-                    <a href="id1.html" target="_blank" class="buy-button">Know More</a>
+                    <a href="philips-airfryer-large-4.2L-healthy-cooking.html" target="_blank" class="buy-button">Know More</a>
                 </div>
                 <div class="affiliate-container">
                     <h3>NutriPro Juicer Mixer</h3>
                     <img src="images/Nutri-mix.jpg" alt="NutriPro-Juicer-Mixer">
                     <p class="product-description">Nutripro Copper Juicer Mixer Grinder - Smoothie Maker - 500 Watts (3 Jars, Silver)</p>
-                    <a href="id2.html" target="_blank" class="buy-button">Know More</a>
+                    <a href="nutripro-copper-juicer-mixer-smoothie-maker.html" target="_blank" class="buy-button">Know More</a>
                 </div>
                 <div class="affiliate-container">
                     <h3>Todays DEALS</h3>
@@ -251,16 +264,10 @@
                     <a href="https://amzn.to/3YzNwCq" target="_blank" class="buy-button">Get Deals</a>
                 </div>
                 <div class="affiliate-container">
-                    <h3>Milton Elite Spin Mop</h3>
-                    <img src="images/floor-cleaner.jpg" alt="Milton Elite Spin Mop with Bigger Wheels">
-                    <p class="product-description">Spotzero by Milton Elite Spin Mop with Bigger Wheels and Plastic Auto Fold Handle for 360 Degree Cleaning (Aqua Green, Two Refills)</p>
-                    <a href="id3.html" target="_blank" class="buy-button">Know More</a>
-                </div>
-                <div class="affiliate-container">
                     <h3>Water Can Dispenser Pump</h3>
                     <img src="images/water-can-pump.jpg" alt="water can auto pump">
                     <p class="product-description">Automatic Wireless Water Can Dispenser Pump for 20 Litre Bottle Can</p>
-                    <a href="id4.html" target="_blank" class="buy-button">Know More</a>
+                    <a href="automatic-water-can-dispenser-pump.html" target="_blank" class="buy-button">Know More</a>
                 </div>
                 <div class="adsense-container">
                     <h3>Your Ads Here</h3>
@@ -278,13 +285,13 @@
                     <h3>Scotch-Brite Spin Mop</h3>
                     <img src="images/floor-clean.jpg" alt="Scotch-Brite 2-in-1 Bucket Spin Mop">
                     <p class="product-description">Twin Bucket Spin Mop for easy wringing and rinsing, Microfibre technology helps lift and trap dirt with unique easy clean surface for superior clean.</p>
-                    <a href="id5.html" target="_blank" class="buy-button">Know more</a>
+                    <a href="2-in-1-bucket-spin-mop.html" target="_blank" class="buy-button">Know more</a>
                 </div>
                 <div class="affiliate-container">
                     <h3>Universal Travel Adapter</h3>
                     <img src="images/travel-adaptor.jpg" alt="International All in One Worldwide Travel Adapter">
                     <p class="product-description">International All in One Worldwide Travel Adapter and Wall Charger with USB Ports with Multi Type Power Outlet USB 2.1A,100-250 Voltage Travel Charger</p>
-                    <a href="id6.html" target="_blank" class="buy-button">Know More</a>
+                    <a href="universal-travel-adapter-usb-charger.html" target="_blank" class="buy-button">Know More</a>
                 </div>
                 <div class="adsense-container">
                     <h3>Your Ads Here</h3>
@@ -295,13 +302,13 @@
                     <h3>Bathroom Shelf</h3>
                     <img src="images/bathroom-shelf.jpg" alt="Self-Adhesive Bathroom Organiser with Towel Holder">
                     <p class="product-description"> Bathroom Shelf for Wall, Self-Adhesive Bathroom Organiser with Towel Holder, Ideal Bathroom Accessories for Efficient Space Utilisation (2 Bathroom Shelves+ 2 Shop Dish (White), 4 Pack)</p>
-                    <a href="id7.html" target="_blank" class="buy-button">Know More</a>
+                    <a href="self-adhesive-bathroom-organiser-towel-holder.html" target="_blank" class="buy-button">Know More</a>
                 </div>
                 <div class="affiliate-container">
                     <h3>Water TDS meter</h3>
                     <img src="images/water-tester.jpg" alt="Total Dissolved Solids Meter">
                     <p class="product-description">Total Dissolved Solids Meter, Water Quality Tester, Ppm Tester For Water Testing </p>
-                    <a href="id8.html" target="_blank" class="buy-button">Know More</a>
+                    <a href="water-tds-meter-quality-tester.html" target="_blank" class="buy-button">Know More</a>
                 </div>
                 <div class="affiliate-container">
                     <h3>₹499 DEALS !</h3>
@@ -320,13 +327,13 @@
                     <h3>Nebulizer Machine</h3>
                     <img src="images/nebulizer.jpg" alt="Nebulizer">
                     <p class="product-description">Nebulizer Machine Complete Kit for Adults and Kids with Mask</p>
-                    <a href="id9.html" target="_blank" class="buy-button">Know More</a>
+                    <a href="nebulizer-machine-complete-kit.html" target="_blank" class="buy-button">Know More</a>
                 </div>
                 <div class="affiliate-container">
                     <h3>All Purpose Cleaner</h3>
                     <img src="images/tile-clean.jpg" alt="Tile, Floor & Wall Cleaner">
                     <p class="product-description">Clean All Purpose Tile, Floor & Wall Cleaner ‘1 Litre’, Advance Tile Cleaner for Kitchen, Bedroom & Bathroom Floors, Removes Grease, Dirt & Tough Stains</p>
-                    <a href="id10.html" target="_blank" class="buy-button">Know More</a>
+                    <a href="all-purpose-tile-floor-wall-cleaner.html" target="_blank" class="buy-button">Know More</a>
                 </div>
                 <div class="adsense-container">
                     <h3>Your Ads Here</h3>
@@ -337,13 +344,13 @@
                     <h3>Copper RO Water Purifier</h3>
                     <img src="images/kent-water.jpg" alt="KENT Supreme Copper RO Water Purifier">
                     <p class="product-description">Makes Water 100% Pure: KENT purifiers remove bacteria, viruses, chemicals, and even dissolved impurities such as arsenic, rust, pesticides, and fluorides to make water 100% pure and healthy that meets drinking water standards of IS:10500.</p>
-                    <a href="id11.html" target="_blank" class="buy-button">Know More</a>
+                    <a href="kent-supreme-copper-ro-water-purifier.html" target="_blank" class="buy-button">Know More</a>
                 </div>
                 <div class="affiliate-container">
                     <h3>Yoga and Exercise Mat</h3>
                     <img src="images/workout-mat.jpg" alt="Yoga and Exercise Mat">
                     <p class="product-description"> 13mm Extra Thick NBR Yoga and Exercise Mat with Carrying Strap, Steel</p>
-                    <a href="id12.html" target="_blank" class="buy-button">Know More</a>
+                    <a href="extra-thick-yoga-exercise-mat.html" target="_blank" class="buy-button">Know More</a>
                 </div>
                 <div class="adsense-container">
                     <h3>Your Ads Here</h3>
@@ -361,13 +368,13 @@
                     <h3>Dumbbells, Set Of 2</h3>
                     <img src="images/dumbbells.jpg" alt="Dumbbells, Set Of 2">
                     <p class="product-description">Neoprene Dumbbells, Set Of 2 with wieght of 1bs,2lbs,3lbs,5lbs,8lbs,10lbs,12lbs,15lbs,20lbs</p>
-                    <a href="id13.html" target="_blank" class="buy-button">Know More</a>
+                    <a href="neoprene-dumbbells-set-of-2.html" target="_blank" class="buy-button">Know More</a>
                 </div>
                 <div class="affiliate-container">
-                    <h3>Pajama Pants Boys/Girls</h3>
-                    <img src="images/pajama-pants.jpg" alt="Pants Boys/Girls">
-                    <p class="product-description">Minicult Cotton Pajama Pants with All Over Print for Boys and Girls (Multicolor Designs)(Pack of 5)</p>
-                    <a href="https://amzn.to/4hxQTTl" target="_blank" class="buy-button">Buy Now</a>
+                    <h3>Milton Elite Spin Mop</h3>
+                    <img src="images/floor-cleaner.jpg" alt="Milton Elite Spin Mop with Bigger Wheels">
+                    <p class="product-description">Spotzero by Milton Elite Spin Mop with Bigger Wheels and Plastic Auto Fold Handle for 360 Degree Cleaning (Aqua Green, Two Refills)</p>
+                    <a href="milton-elite-spin-mop-360-degree-cleaning.html" target="_blank" class="buy-button">Know More</a>
                 </div>
                 <div class="adsense-container">
                     <h3>Your Ads Here</h3>
@@ -522,6 +529,6 @@
         <p>&copy; 2024 UberTOTO. All rights reserved.</p>
     </footer>
     <a href="how-to-find-best-products-in-amazon.html" class="fixed-button"><span>How to find best products in Amazon</span></a>
-     
+
 </body>
 </html>
