@@ -1,0 +1,32 @@
+name: Generate Sitemap for ubertoto.com
+
+on:
+  push:
+    branches:
+      - main  # Or the name of your default branch (e.g., 'master')
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Generate sitemap.xml
+        run: |
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
+          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
+          for file in $(find . -name '*.html' -type f); do
+            url="https://ubertoto.com/$(basename $file)"
+            echo "<url><loc>$url</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>" >> sitemap.xml
+          done
+          echo '</urlset>' >> sitemap.xml
+
+      - name: Commit and push updated sitemap
+        run: |
+          git config --local user.name "github-actions"
+          git config --local user.email "github-actions@github.com"
+          git add sitemap.xml
+          git commit -m "Auto-update sitemap"
+          git push
