@@ -3,40 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UberTOTO : Pigeon-Electric-Kettle</title>
-    <meta name="description" content="Discover the Pigeon Electric Kettle, perfect for quick and efficient boiling. Ideal for home and office use.">
-    <meta name="keywords" content="Pigeon electric kettle, electric kettle, quick boiling kettle, home kettle, office kettle, efficient boiling">
+    <title>Pigeon Electric Kettle 2L - Best Deals & Reviews | UberTOTO</title>
+    <meta name="description" content="Discover the Pigeon Electric Kettle 2L, perfect for boiling water quickly and efficiently. Read reviews and find the best deals.">
+    <meta name="keywords" content="Pigeon Electric Kettle, 2L electric kettle, best electric kettle, kitchen appliance, quick boiling kettle, stainless steel kettle">
     <meta name="robots" content="index, follow">
     <meta name="author" content="UberTOTO">
 
     <!-- Open Graph Tags for Social Media -->
-    <meta property="og:title" content="Pigeon Electric Kettle - UberTOTO">
-    <meta property="og:description" content="Discover the Pigeon Electric Kettle, perfect for quick and efficient boiling. Ideal for home and office use.">
-    <meta property="og:image" content="https://ubertoto.com/images/pigeon-electric-kettle.jpg"> <!-- Update with your image URL -->
-    <meta property="og:url" content="https://ubertoto.com/Pigeon-Electric-Kettle.html"> <!-- Update with your page URL -->
+    <meta property="og:title" content="Pigeon Electric Kettle 2L - Best Deals & Reviews | UberTOTO">
+    <meta property="og:description" content="Discover the Pigeon Electric Kettle 2L, perfect for boiling water quickly and efficiently. Read reviews and find the best deals.">
+    <meta property="og:image" content="https://ubertoto.com/images/pigeon-electric-kettle.jpg">
+    <meta property="og:url" content="https://ubertoto.com/pigeon-electric-kettle.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="UberTOTO">
     <meta property="og:locale" content="en_US">
+
+     <!-- Structured Data (JSON-LD) -->
+     <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Product",
+            "name": "Pigeon Electric Kettle 2L",
+            "image": "https://ubertoto.com/images/pigeon-electric-kettle.jpg",
+            "description": "Discover the Pigeon Electric Kettle 2L, perfect for boiling water quickly and efficiently. Read reviews and find the best deals.",
+            "brand": {
+                "@type": "Brand",
+                "name": "Pigeon"
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "3.9",
+                "reviewCount": "168,444"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "549",
+                "priceCurrency": "INR",
+                "availability": "http://schema.org/InStock",
+                "seller": {
+                    "@type": "Organization",
+                    "name": "Amazon"
+                }
+            }
+        }
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
             padding: 20px;
-            display: flex; /* Use flexbox for layout */
-            flex-direction: column;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
         }
         img {
             max-width: 100%; /* Allow image to be responsive */
             height: auto;
-            margin-right: auto; /* Space between image and ad */
-            margin-left: auto;
             display: block; /* Center image */
+            margin: 0 auto 20px;
         }
-        .table-img {
-            width: 100px; /* Set a fixed width for table images */
-            height: auto; /* Set a fixed height for table images */
-        }
-        h1 {
+        h1, h2, h3 {
             color: #333;
         }
         h5 {
@@ -54,22 +87,56 @@
         .buy-now {
             background-color: #28a745; /* Green color for the Buy Now button */
         }
+        .features-section {
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .features-section h2 {
+            text-align: center;
+            color: orange;
+        }
+        .features-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .features-list li {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .features-list li::before {
+            content: '✔';
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
-        
         th, td {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 12px;
             text-align: center;
         }
         th {
-            background-color: #e0f122;
-            color: black;
+            background-color: #f4f4f4;
+            color: #333;
+            font-weight: bold;
         }
-        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
         .check {
             background-color: #eb811e;
             color: white;
@@ -78,25 +145,29 @@
             text-decoration: none;
             display: inline-block;
             margin-top: 10px;
+            border-radius: 5px;
+        }
+        .check:hover {
+            background-color: #d76a00;
         }
         .adsense {
             width: 300px; /* Adjust width to fit your ad */
         }
-        /* Styling for the floating Twitter follow button */
-        .twitter-floating-button {
-            position: fixed;              /* Keeps the button floating */
-            top: 50%;                     /* Vertically centers the button */
-            right: 10px;                  /* Positions it slightly away from the right edge */
-            transform: translateY(-50%);  /* Adjusts for exact centering */
-            padding: 10px;
-           /* background-color: whitesmoke; /* Light gray background */
-            border-radius: 5px 0 0 5px;   /* Rounded left side */
-            z-index: 1000;                /* Ensures it appears above other content */
-        }
-
-        /* Optional: Styling for the Twitter button hover effect */
-        .twitter-floating-button:hover {
-            background-color: #1a8cd8;
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            th, td {
+                padding: 8px;
+            }
+            .features-list li {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .features-list li::before {
+                margin-bottom: 5px;
+            }
         }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7495143337429327"
@@ -110,19 +181,10 @@
         gtag('js', new Date());
         gtag('config', 'G-G7Y3QWN0DX');
     </script>
-    <div class="twitter-floating-button">
-    <a href="https://twitter.com/Ubertotocom" class="twitter-follow-button" 
-        data-show-count="false"
-        data-size="large"                
-        data-dnt="true"                  
-        data-show-screen-name="false">   
-        Follow 
-    </a>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
+    
 </head>
 <body>
-    <div>
+    <div class="container">
         <h1>Pigeon-Electric-Kettle 2L</h1>
         <img src="images/pigeon-electric-kettle.jpg" alt="pigeon-electric-kettle">
 
@@ -132,6 +194,21 @@
             <h4>For latest discounts, please click on "Buy Now"</h4><h5>Disclaimer: This site contains affiliate links to products on Amazon, We earn from qualifying purchases to support our website and keep providing great content !</h5></p>
         <p><h3>Why you should BUY!</h3>The Pigeon Electric Kettle is an essential appliance for any kitchen. It quickly boils water, making it perfect for preparing tea, coffee, instant noodles, and more. With its sleek design and user-friendly features, this kettle ensures convenience and efficiency. Its automatic shut-off feature provides safety, while the stainless steel body ensures durability. Upgrade your kitchen with the Pigeon Electric Kettle and enjoy hot water at your fingertips.</p>
         <p>Rating: ★★★★☆ (3.9/5) - <b><i>168,444 ratings</i></b></p>
+        <div class="features-section">
+            <h2>Key Features</h2>
+            <ul class="features-list">
+                <li>2L Capacity: Perfect for boiling water for tea, coffee, instant noodles, and more.</li>
+                <li>Quick Boiling: Boils water quickly and efficiently.</li>
+                <li>Automatic Shut-Off: Provides safety by automatically switching off once the water has reached boiling point.</li>
+                <li>Stainless Steel Body: Ensures durability and a sleek design.</li>
+                <li>Easy to Use: User-friendly features for convenience.</li>
+                <li>360-Degree Swivel Base: Allows for easy handling and pouring.</li>
+                <li>Cool Touch Handle: Prevents burns and ensures safe handling.</li>
+                <li>Wide Mouth: Makes filling and cleaning easy.</li>
+                <li>Indicator Light: Shows when the kettle is in operation.</li>
+                <li>Portable and Lightweight: Easy to carry and store.</li>
+            </ul>
+        </div>
         <p><h3>How to USE</h3></p>
         <p>Using the Pigeon Electric Kettle is simple and convenient:</p>
         <ol>
@@ -157,7 +234,6 @@
             <tr>
                 <th>Product</th>
                 <th>Image</th>
-                <th>Features</th>
                 <th>Price</th>
                 <th>Rating</th>
                 <th>Buy Now</th>
@@ -165,7 +241,6 @@
             <tr>
                 <td>V-Guard 1.5 Litre Electric Kettle</td>
                 <td><img src="images/vguard-kettle.jpg" alt="V-Guard 1.5 Litre Electric Kettle" class="table-img"></td>
-                <td>1.5 Litre 1500 watts Electric Kettle for hot water | Double Wall with Cool Touch Body | 2 Year Coverage By V-Guard.</td>
                 <td>₹649</td>
                 <td>3.9/5 (1,823)</td>
                 <td><a href="https://amzn.to/3ChpxRa" class="check">Check</a></td>
@@ -173,7 +248,6 @@
             <tr>
                 <td>Havells Electric Kettle 1.2 liters</td>
                 <td><img src="images/havells-kettle.jpg" alt="Havells Electric Kettle 1.2 liters" class="table-img"></td>
-                <td>1250 Watts 1.2 liters , Double Layered Cool Touch Outer Body | 304 Rust Resistant SS Inner Body with Auto Shut Off | Wider Mouth | 2 Yr Manufacturer Warranty </td>
                 <td>₹1,495</td>
                 <td>4.4/5 (28,163)</td>
                 <td><a href="https://amzn.to/3AvFP8q" class="check">Check</a></td>
@@ -181,13 +255,11 @@
             <tr>
                 <td>Prestige Stainless Steel 1.5 Litre Kettle</td>
                 <td><img src="images/prestige-kettle.jpg" alt="Prestige Stainless Steel 1.5 Litre Kettle " class="table-img"></td>                
-                <td>1500W Max 3 differentiators great features - automatic cutoff, 360 degree swivel base, single touch lid locking. Lockable Lid:Yes</td>
                 <td>₹649</td>
                 <td>3.9/5 (40,311)</td>
                 <td><a href="https://amzn.to/4ffX8cO" class="check">Check</a></td>
             </tr>
         </table>
-        <p><h5>Note : Above metioned products are curated with affiliate program</h5></p> 
     </div>
 </body>
 </html>
