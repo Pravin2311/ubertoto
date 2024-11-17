@@ -14,6 +14,8 @@
     <meta property="og:image" content="https://ubertoto.com/images/ubertoto.jpeg"> <!-- Update with your image URL -->
     <meta property="og:url" content="https://ubertoto.com"> <!-- Update with your website URL -->
     
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <style>
 
         body {
@@ -124,80 +126,7 @@
             background-color: #ff7f00;
         }
 
-        /* Styling for the fixed button in the top-right corner */
-        .fixed-button {
-            position: absolute;  /* Change to absolute positioning */
-            top: 20px;          /* Distance from the top edge */
-            right: 20px;        /* Distance from the right edge */
-            padding: 10px 20px;
-            background-color: #e6a100;
-            color: rgb(8, 0, 0);
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-            font-weight: bold;
-            text-decoration: none;
-            z-index: 1000;      /* Ensures the button is above other content */
-        }
 
-        /* Styling for the floating Twitter follow button */
-        .twitter-floating-button {
-            position: fixed;              /* Keeps the button floating */
-            top: 50%;                     /* Vertically centers the button */
-            right: 10px;                  /* Positions it slightly away from the right edge */
-            transform: translateY(-50%);  /* Adjusts for exact centering */
-            padding: 10px;
-           /* background-color: whitesmoke; /* Light gray background */
-            border-radius: 5px 0 0 5px;   /* Rounded left side */
-            z-index: 1000;                /* Ensures it appears above other content */
-        }
-
-        /* Optional: Styling for the Twitter button hover effect */
-        .twitter-floating-button:hover {
-            background-color: #1a8cd8;
-        }
-        /* Default style for desktop */
-        .fixed-button {
-            position: absolute; /* Change to absolute positioning */
-            top: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            background-color: #e6a100;
-            color: rgb(8, 0, 0);
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-            font-weight: bold;
-            text-decoration: none;
-            z-index: 1000;
-            transition: background-color 0.3s ease;
-        }
-
-        /* Button hover effect */
-        .fixed-button:hover {
-            background-color: #d59400;
-        }
-
-        /* Media query to change button content on mobile */
-        @media (max-width: 600px) {
-            .fixed-button {
-                padding: 10px; /* Reduce padding for mobile */
-                font-size: 1em; /* Increase font size for the icon */
-                width: 20px; /* Set a fixed width */
-                height: 20px; /* Set a fixed height */
-                text-align: center; /* Center the text */
-                line-height: 20px; /* Center the text vertically */
-            }
-            .fixed-button::after {
-                content: "?"; /* Change content to "?" */
-                display: block;
-                font-size: 1.5em; /* Increase font size for the icon */
-                color: rgb(8, 0, 0); /* Ensure the color matches */
-            }
-            .fixed-button span {
-                display: none; /* Hide the original text */
-            }
-        }
         .region-buttons {
             text-align: center;
             margin: 20px 0;
@@ -211,10 +140,7 @@
             border-radius: 5px;
             font-size: 16px;
         }
-        .fb-follow-button {
-            display: inline-block;
-            margin: 0 10px;
-        }
+        
         
     </style>
     
@@ -243,18 +169,7 @@
             }
         }
     </script>
-    <!-- Floating Twitter Follow Button -->
-    <div class="twitter-floating-button">
-        <a href="https://twitter.com/UberTOTOcom" class="twitter-follow-button" 
-            data-show-count="false"
-            data-size="large"                
-            data-dnt="true"                  
-            data-show-screen-name="false">   
-            Follow 
-        </a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div>
-    
+        
 </head>
 <body>
     
@@ -263,11 +178,7 @@
         <h4>"Find the Best Deals, All in One Place!"<br>Our AI tool reads all the reviews & consolidates public opinion..</br></h4>
     </header>
     <div class="region-buttons">
-        <a href="index.html">India</a>
-        <a href="index-international.html">International</a>
-        <div class="fb-follow-button">
-            <div class="fb-follow" data-href="https://www.facebook.com/Ubertotocom" data-width="small" data-layout="button" data-size="small" data-show-faces="true"></div>
-        </div>
+        <a href="index.html">Home</a>
     </div>
     
     <!-- Rows with Categories and Containers -->
@@ -275,26 +186,8 @@
         
         <!-- Row 1 -->
         <section>
-            <h2>We Pick Top rated & Trending products</h2>
+            <h2>Our Picks : Kitchen and Dining</h2>
             <div class="row">
-                <div class="affiliate-container">
-                    <h3>Apple iPad 9th Gen</h3>
-                    <img src="images/apple-ipad-9th-gen.jpg" alt="Apple iPad 9th Gen">
-                    <p class="product-description">Apple iPad 9th Generation offers 10.2-inch Retina display, A13 Bionic chip and support for Apple Pencil and Smart Keyboard.</p>
-                    <a href="apple-ipad-9th-generation-best-deals-and-reviews.html" target="_blank" class="buy-button">Know More</a>
-                </div>
-                <div class="affiliate-container">
-                    <h3>Shopify Expert guide</h3>
-                    <img src="images/shopify-dashboard.jpeg" alt="Shopify Expert guide">
-                    <p class="product-description">Learn to master Shopify with our expert guide. Boost your e-commerce skills and grow your online store.</p>
-                    <a href="shopify-expert-guide.html" target="_blank" class="buy-button">Know More</a>
-                </div>
-                <div class="affiliate-container">
-                    <h3>Coming Soon</h3>
-                    <img src="images/coming-soon.jpg" alt="Coming Soon">
-                    <p class="product-description">Coming Soon !</p>
-                    <a href="index.html" target="_blank" class="buy-button">Know More</a>
-                </div>
                 <div class="affiliate-container">
                     <h3>Coming Soon</h3>
                     <img src="images/coming-soon.jpg" alt="Coming Soon">
@@ -311,6 +204,24 @@
                     <h3>Your Ads Here</h3>
                     <a class="enquiry" href="mailto:contact@ubertoto.com">Send Enquiry</a>
                     <p>Your Ads Here</p>
+                </div>
+                <div class="affiliate-container">
+                    <h3>Coming Soon</h3>
+                    <img src="images/coming-soon.jpg" alt="Coming Soon">
+                    <p class="product-description">Coming Soon !</p>
+                    <a href="index.html" target="_blank" class="buy-button">Know More</a>
+                </div>
+                <div class="affiliate-container">
+                    <h3>Coming Soon</h3>
+                    <img src="images/coming-soon.jpg" alt="Coming Soon">
+                    <p class="product-description">Coming Soon !</p>
+                    <a href="index.html" target="_blank" class="buy-button">Know More</a>
+                </div>
+                <div class="affiliate-container">
+                    <h3>Coming Soon</h3>
+                    <img src="images/coming-soon.jpg" alt="Coming Soon">
+                    <p class="product-description">Coming Soon !</p>
+                    <a href="index.html" target="_blank" class="buy-button">Know More</a>
                 </div>
             </div>
         </section>
@@ -402,7 +313,7 @@
 
         <!-- Row 4 -->
         <section>
-            <h2>Our Picks : Infants and baby products</h2>
+            <h2></h2>
             <div class="row">
                 <div class="affiliate-container">
                     <h3>Coming Soon</h3>
@@ -569,8 +480,5 @@
     <footer style="text-align: center; padding: 10px; background-color: #1E1E1E;">
         <p>&copy; 2024 UberTOTO. All rights reserved.</p>
     </footer>
-    <a href="how-to-find-best-products-online.html" class="fixed-button"><span>How to find best products Online</span></a>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="YOUR_NONCE"></script>
 </body>
 </html>
