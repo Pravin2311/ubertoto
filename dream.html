@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dream to Number Converter | Ubertoto</title>
+  <meta name="description" content="Turn your dreams into numbers with Ubertoto's Dream to Number Converter. Enter a dream symbol and see inspired lucky numbers. Entertainment only.">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header, footer {
+      padding: 1rem;
+      background: #000;
+    }
+    h1 {
+      color: gold;
+      text-shadow: 0 0 8px rgba(255,215,0,0.6);
+    }
+    h2 {
+      color: #ffd700;
+      cursor: pointer;
+      margin-bottom: 0.5rem;
+    }
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    .card {
+      background: #1a1a1a;
+      border: 2px solid gold;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 0 12px rgba(255,215,0,0.2);
+    }
+
+    /* Styled Search Box */
+    input {
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      border: 2px solid #444;
+      width: 80%;
+      margin: 1rem 0;
+      font-size: 1rem;
+      background: #000;
+      color: gold;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+    input:focus {
+      border-color: gold;
+      box-shadow: 0 0 10px gold;
+    }
+    input::placeholder {
+      color: #888;
+      font-style: italic;
+    }
+
+    button {
+      padding: 0.7rem 1.5rem;
+      border: none;
+      background: gold;
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #e6c200;
+    }
+    .back-home {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #444;
+      color: gold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .back-home:hover {
+      background: #666;
+    }
+    .result {
+      margin-top: 1rem;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #ffd700;
+    }
+
+    /* Collapsible How-to + Tips Sections */
+    .seo-section {
+      margin: 1.5rem auto;
+      text-align: left;
+      padding: 1rem;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-left: 5px solid gold;
+      border-radius: 10px;
+      max-width: 700px;
+      box-shadow: 0 0 8px rgba(255,215,0,0.2);
+    }
+    .seo-section h2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.2rem;
+    }
+    .seo-section h2::after {
+      content: "▼";
+      font-size: 0.8rem;
+      transition: transform 0.3s;
+    }
+    .seo-section[open] h2::after {
+      transform: rotate(180deg);
+    }
+    .seo-section p, .seo-section ul {
+      display: none;
+      margin-top: 0.5rem;
+      line-height: 1.6;
+      color: #ddd;
+    }
+    .seo-section ul li {
+      margin: 0.4rem 0;
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 1.2rem; }
+      .seo-section { font-size: 0.95rem; padding: 0.8rem; }
+      input { width: 95%; font-size: 0.9rem; }
+      button { width: 100%; padding: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌙 Dream to Number</h1>
+    <p>Convert your dream symbols into inspired numbers</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <form onsubmit="generateNumbers(); return false;">
+        <input type="text" id="dreamInput" placeholder="🔍 Enter your dream (e.g. snake, money)" aria-label="Dream Input">
+        <br>
+        <button type="submit">🔮 Get Numbers</button>
+      </form>
+      <div id="result" class="result"></div>
+      <a href="index.html" class="back-home">⬅️ Back to Home</a>
+    </div>
+  </main>
+
+  <!-- How-to Section -->
+  <section class="seo-section">
+    <h2 onclick="toggleSection(this)" aria-expanded="false">📘 How to Use Dream to Number Converter</h2>
+    <p>Using Ubertoto’s Dream to Number Converter is simple. Enter a word or phrase describing your dream (e.g., snake, money, house). Our AI-inspired tool will suggest numbers associated with traditional interpretations and generate random combinations for entertainment.</p>
+  </section>
+
+  <!-- Tips Section -->
+  <section class="seo-section">
+    <h2 onclick="toggleSection(this)" aria-expanded="false">💡 Tips for Better Results</h2>
+    <ul>
+      <li>Be specific with your dream symbol (e.g., "black cat" instead of just "cat").</li>
+      <li>Try different variations of your dream for unique number sets.</li>
+      <li>Combine multiple dreams for creative outcomes.</li>
+    </ul>
+  </section>
+
+ <footer style="background-color:#0a0a0a; color:#fff; padding:20px 10px; font-family:Arial, sans-serif; text-align:center; margin-top:20px; border-top:1px solid #222;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:center; gap:15px; font-size:0.85rem;">
+
+    <!-- Links -->
+    <div>
+      <a href="about.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">About</a>|
+      <a href="contact.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Contact</a>|
+      <a href="privacy.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Privacy Policy</a>|
+      <a href="disclaimer.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Disclaimer</a>
+    </div>
+
+    <!-- Disclaimer -->
+    <div style="width:100%; margin-top:10px; font-size:0.75rem; color:#888;">
+      ⚠️ Ubertoto is an entertainment website only. No real money betting, lottery, or gambling services are provided.
+    </div>
+
+    <!-- Copyright -->
+    <div style="width:100%; margin-top:5px; font-size:0.75rem; color:#888;">
+      &copy; 2025 Ubertoto. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+  <script>
+    const dreamDict = { "snake": "21, 89", "baby": "08, 56", "money": "28, 74", "wedding": "11, 65", "death": "13, 42", "tiger": "17, 92", "car": "45, 88", "house": "27, 61", "ghost": "03, 77", "water": "09, 54", "dog": "06, 49", "cat": "04, 72", "rat": "19, 31", "bird": "22, 66", "fish": "07, 80", "elephant": "29, 95", "horse": "34, 70", "cow": "15, 57", "lion": "39, 84", "monkey": "12, 63", "chicken": "23, 67", "pig": "41, 82", "goat": "10, 52", "crocodile": "33, 86", "dragon": "46, 91", "ant": "05, 60", "bee": "30, 71", "butterfly": "47, 85", "spider": "50, 93", "scorpion": "32, 78", "snake bite": "14, 64", "flying": "16, 48", "falling": "24, 68", "teeth falling": "20, 81", "blood": "44, 97", "fire": "25, 90", "rain": "18, 75", "storm": "36, 83", "sun": "26, 62", "moon": "40, 87", "stars": "35, 76", "gold": "37, 94", "silver": "43, 99", "ring": "42, 96", "knife": "38, 73", "gun": "53, 98", "sword": "55, 79", "key": "51, 88", "book": "58, 100", "pen": "59, 104", "paper": "61, 102", "phone": "63, 106", "computer": "66, 110", "mirror": "65, 108", "shoes": "68, 112", "clothes": "70, 114", "hat": "71, 116", "bag": "72, 118", "chair": "74, 120", "table": "76, 122", "bed": "78, 124", "toilet": "79, 126", "road": "81, 128", "bridge": "82, 130", "train": "83, 132", "bus": "85, 134", "plane": "86, 136", "ship": "88, 138", "bicycle": "89, 140", "motorcycle": "90, 142", "police": "91, 144", "soldier": "92, 146", "doctor": "93, 148", "teacher": "94, 150", "king": "95, 152", "queen": "96, 154", "child": "97, 156", "father": "98, 158", "mother": "99, 160", "brother": "100, 162", "sister": "101, 164", "friend": "102, 166", "stranger": "103, 168", "lover": "104, 170", "marriage": "105, 172", "divorce": "106, 174", "pregnant": "107, 176", "old man": "108, 178", "old woman": "109, 180", "child crying": "110, 182", "laughing": "111, 184", "dancing": "112, 186", "singing": "113, 188", "fighting": "114, 190", "crying": "115, 192", "running": "116, 194", "swimming": "117, 196", "climbing": "118, 198", "driving": "119, 200", "eating": "120, 202", "drinking": "121, 204", "cooking": "122, 206", "sleeping": "123, 208", "working": "124, 210", "studying": "125, 212", "exam": "126, 214", "school": "127, 216", "hospital": "128, 218", "grave": "129, 220", "market": "130, 222", "shop": "131, 224", "temple": "132, 226", "church": "133, 228", "mosque": "134, 230", "forest": "135, 232", "mountain": "136, 234", "sea": "137, 236", "island": "138, 238", "snake": "21, 89",
+      "baby": "08, 56",
+      "money": "28, 74",
+      "wedding": "11, 65",
+      "death": "13, 42",
+      "tiger": "17, 92",
+      "car": "45, 88",
+      "house": "27, 61",
+      "ghost": "03, 77",
+      "water": "09, 54",
+      "dog": "06, 49",
+      "cat": "04, 72",
+      "rat": "19, 31",
+      "bird": "22, 66",
+      "fish": "07, 80",
+      "elephant": "29, 95",
+      "horse": "34, 70",
+      "cow": "15, 57",
+      "lion": "39, 84",
+      "monkey": "12, 63",
+      "chicken": "23, 67",
+      "pig": "41, 82",
+      "goat": "10, 52",
+      "crocodile": "33, 86",
+      "dragon": "46, 91",
+      "ant": "05, 60",
+      "bee": "30, 71",
+      "butterfly": "47, 85",
+      "spider": "50, 93",
+      "scorpion": "32, 78",
+      "snake bite": "14, 64",
+      "flying": "16, 48",
+      "falling": "24, 68",
+      "teeth falling": "20, 81",
+      "blood": "44, 97",
+      "fire": "25, 90",
+      "rain": "18, 75",
+      "storm": "36, 83",
+      "sun": "26, 62",
+      "moon": "40, 87",
+      "stars": "35, 76",
+      "gold": "37, 94",
+      "silver": "43, 99",
+      "ring": "42, 96",
+      "knife": "38, 73",
+      "gun": "53, 98",
+      "sword": "55, 79",
+      "key": "51, 88",
+      "book": "58, 100"};
+
+     function findDreamKey(input) {
+      input = input.toLowerCase();
+      return Object.keys(dreamDict).find(key => input.includes(key)) || null;
+    }
+
+    function generateNumbers() {
+      const dream = document.getElementById("dreamInput").value.toLowerCase().trim();
+      const matchedKey = findDreamKey(dream);
+      let dictNums = matchedKey ? dreamDict[matchedKey] : "— (no traditional match)";
+      
+      const randomNums = Array.from({length: 3}, () => Math.floor(Math.random() * 50) + 1).join(", ");
+      document.getElementById("result").innerHTML = `
+        Dream Symbol: <b>${dream || "(none)"}</b><br>
+        Traditional Numbers: <b>${dictNums}</b><br>
+        AI-Inspired Numbers: <b>${randomNums}</b>
+      `;
+    }
+
+    function toggleSection(el) {
+      let sibling = el.nextElementSibling;
+      const expanded = el.getAttribute("aria-expanded") === "true";
+      el.setAttribute("aria-expanded", !expanded);
+
+      while (sibling && (sibling.tagName === "P" || sibling.tagName === "UL")) {
+        sibling.style.display = expanded ? "none" : "block";
+        sibling = sibling.nextElementSibling;
+      }
+    }
+  </script>
+</body>
+</html>

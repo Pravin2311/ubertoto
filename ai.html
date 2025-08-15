@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Predictor - UberTOTO</title>
+  <meta name="description" content="AI Predictor by UberTOTO: Generate smart AI-inspired 2D, 3D, and 4D number predictions for fun. Free, easy, and mobile-friendly.">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0d111a;
+      color: #fff;
+      text-align: center;
+    }
+
+    header {
+      background: #111520;
+      padding: 20px;
+      border-bottom: 2px solid #ffcc00;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #ffcc00;
+      font-size: 26px;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      color: #ddd;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #111520;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    }
+
+    h2 {
+      color: #ffcc00;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+    button {
+      background: #ffcc00;
+      color: #111520;
+      margin: 10px 0;
+      font-weight: bold;
+      border-radius: 6px;
+      padding: 12px 18px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      width: 100%;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #ffd633;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #1e2230;
+      border-radius: 8px;
+      display: none;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .ai-number {
+      display: inline-block;
+      margin: 6px;
+      padding: 10px 15px;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #ffcc00, #ff9900);
+      color: #111520;
+      box-shadow: 0 0 8px rgba(255,204,0,0.8);
+    }
+
+    /* Info Section */
+    .howto {
+      margin: 20px auto;
+      max-width: 600px;
+      display: grid;
+      gap: 20px;
+      padding: 0 15px;
+    }
+
+    .info-card {
+      background: #1e2230;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.4);
+      text-align: left;
+    }
+
+    .info-card h2 {
+      color: #ffcc00;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .info-card ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .info-card ul li {
+      margin: 8px 0;
+      padding-left: 24px;
+      position: relative;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .info-card ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 15px;
+      font-size: 13px;
+      background: #111520;
+      border-top: 2px solid #ffcc00;
+      color: #bbb;
+    }
+
+    @media(max-width:600px) {
+      header h1 {
+        font-size: 22px;
+      }
+      .container {
+        margin: 15px;
+        padding: 15px;
+      }
+      .ai-number {
+        font-size: 18px;
+        padding: 8px 12px;
+      }
+      .info-card {
+        padding: 12px;
+      }
+      .info-card h2 {
+        font-size: 18px;
+      }
+      .info-card ul li {
+        font-size: 14px;
+        line-height: 1.4;
+      }
+    }
+  </style>
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AI Predictor - UberTOTO",
+    "url": "https://yourdomain.com/ai.html",
+    "description": "Generate AI-inspired 2D, 3D, and 4D number predictions with UberTOTO's AI Predictor.",
+    "applicationCategory": "Game",
+    "operatingSystem": "All"
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>🤖 AI Predictor</h1>
+    <p>Generate futuristic AI-inspired lucky numbers</p>
+  </header>
+
+  <main>
+    <div class="container">
+      <h2>Tap below to get your AI Prediction</h2>
+      <button onclick="generatePrediction()">✨ Generate Prediction</button>
+      <div id="result" class="result"></div>
+      <button onclick="goHome()">🏠 Back to Home</button>
+    </div>
+
+    <section class="howto">
+      <div class="info-card">
+        <h2>📖 How to Use the AI Predictor</h2>
+        <ul>
+          <li>Click the “Generate Prediction” button.</li>
+          <li>Instantly receive <b>2D, 3D, and 4D AI-inspired numbers</b>.</li>
+          <li>Refresh or try again for new results every time.</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h2>💡 Tips</h2>
+        <ul>
+          <li>Use the predictions for <b>fun, entertainment, and creativity</b>.</li>
+          <li>Mix with your own lucky numbers for unique combinations.</li>
+          <li>Share with friends and enjoy guessing together!</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background-color:#0a0a0a; color:#fff; padding:20px 10px; font-family:Arial, sans-serif; text-align:center; margin-top:20px; border-top:1px solid #222;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:center; gap:15px; font-size:0.85rem;">
+
+    <!-- Links -->
+    <div>
+      <a href="about.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">About</a>|
+      <a href="contact.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Contact</a>|
+      <a href="privacy.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Privacy Policy</a>|
+      <a href="disclaimer.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Disclaimer</a>
+    </div>
+
+    <!-- Disclaimer -->
+    <div style="width:100%; margin-top:10px; font-size:0.75rem; color:#888;">
+      ⚠️ Ubertoto is an entertainment website only. No real money betting, lottery, or gambling services are provided.
+    </div>
+
+    <!-- Copyright -->
+    <div style="width:100%; margin-top:5px; font-size:0.75rem; color:#888;">
+      &copy; 2025 Ubertoto. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+
+  <script>
+    function getRandomNum(length) {
+      return Math.floor(Math.random() * Math.pow(10, length))
+               .toString().padStart(length, "0");
+    }
+
+    function generatePrediction() {
+      let twoD = getRandomNum(2);
+      let threeD = getRandomNum(3);
+      let fourD = getRandomNum(4);
+
+      let html = `<strong>AI Inspired Numbers:</strong><br>`;
+      html += `<div class="ai-number">2D: ${twoD}</div>`;
+      html += `<div class="ai-number">3D: ${threeD}</div>`;
+      html += `<div class="ai-number">4D: ${fourD}</div>`;
+
+      let res = document.getElementById("result");
+      res.innerHTML = html;
+      res.style.display = "block";
+    }
+
+    function goHome() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

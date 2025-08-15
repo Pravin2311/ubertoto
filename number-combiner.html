@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Combiner | Ubertoto</title>
+  <meta name="description" content="Ubertoto Number Combiner - Mix, merge, and shuffle numbers to create unique lucky combos. Entertainment only, not gambling advice.">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header, footer {
+      padding: 1rem;
+      background: #000;
+    }
+    h1 {
+      color: gold;
+    }
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    .card {
+      background: #1a1a1a;
+      border: 2px solid gold;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+    input {
+      padding: 0.7rem;
+      border: 1px solid gold;
+      border-radius: 8px;
+      width: 80%;
+      margin-bottom: 1rem;
+      background: #222;
+      color: #fff;
+      text-align: center;
+    }
+    button {
+      padding: 0.7rem 1.5rem;
+      border: none;
+      background: gold;
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 0.5rem;
+    }
+    button:hover {
+      background: #e6c200;
+    }
+    .back-home {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #444;
+      color: gold;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .result {
+      margin-top: 1.5rem;
+      background: #222;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid gold;
+      font-size: 1.2rem;
+    }
+    .seo-text {
+      text-align: left;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+    .seo-text h2 {
+      color: gold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🔢 Number Combiner</h1>
+    <p>Create your own lucky number combinations</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <p>Enter numbers separated by commas (e.g., 12, 34, 56)</p>
+      <input type="text" id="numberInput" placeholder="Enter numbers...">
+      <br>
+      <button onclick="combineNumbers()">✨ Combine</button>
+      <button onclick="shuffleNumbers()">🔄 Shuffle</button>
+      <div id="result" class="result" style="display:none;"></div>
+      <a href="index.html" class="back-home">⬅️ Back to Home</a>
+    </div>
+  </main>
+
+  <div class="seo-text">
+    <h2>About Number Combiner</h2>
+    <p>
+      Ubertoto’s <strong>Number Combiner</strong> is a fun way to mix your favorite digits and create new lucky number sets. 
+      Whether you believe in lucky numbers, want to try unique combinations, or just enjoy experimenting, 
+      this tool helps you generate <em>custom combos</em> instantly.
+    </p>
+    <h3>How to Use</h3>
+    <ul>
+      <li>Type in numbers separated by commas (e.g., 3, 7, 11, 22).</li>
+      <li>Click <strong>Combine</strong> to merge and see creative combos.</li>
+      <li>Click <strong>Shuffle</strong> to get randomized combinations.</li>
+      <li>Use these for fun, entertainment, or personal lucky number experiments.</li>
+    </ul>
+    <h3>Why People Love It</h3>
+    <p>
+      Many users enjoy exploring <strong>lucky number combinations</strong> because it adds excitement and personalization 
+      to their number-picking process. With Ubertoto’s golden theme and instant results, 
+      it feels like your own number-picking assistant.
+    </p>
+    <p><strong>Disclaimer:</strong> This is for entertainment purposes only. Ubertoto does not promote gambling.</p>
+  </div>
+
+  <footer style="background-color:#0a0a0a; color:#fff; padding:20px 10px; font-family:Arial, sans-serif; text-align:center; margin-top:20px; border-top:1px solid #222;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:center; gap:15px; font-size:0.85rem;">
+
+    <!-- Links -->
+    <div>
+      <a href="about.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">About</a>|
+      <a href="contact.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Contact</a>|
+      <a href="privacy.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Privacy Policy</a>|
+      <a href="disclaimer.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Disclaimer</a>
+    </div>
+
+    <!-- Disclaimer -->
+    <div style="width:100%; margin-top:10px; font-size:0.75rem; color:#888;">
+      ⚠️ Ubertoto is an entertainment website only. No real money betting, lottery, or gambling services are provided.
+    </div>
+
+    <!-- Copyright -->
+    <div style="width:100%; margin-top:5px; font-size:0.75rem; color:#888;">
+      &copy; 2025 Ubertoto. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+
+  <script>
+    function combineNumbers() {
+      const input = document.getElementById("numberInput").value.trim();
+      if (!input) {
+        alert("Please enter some numbers first.");
+        return;
+      }
+      const nums = input.split(",").map(n => n.trim()).filter(n => n !== "");
+      let combos = [];
+
+      for (let i = 0; i < nums.length; i++) {
+        for (let j = i + 1; j < nums.length; j++) {
+          combos.push(nums[i] + nums[j]);
+          combos.push(nums[j] + nums[i]);
+        }
+      }
+
+      document.getElementById("result").style.display = "block";
+      document.getElementById("result").innerHTML = 
+        `<strong>Generated Combos:</strong><br>${combos.join(", ")}`;
+    }
+
+    function shuffleNumbers() {
+      const input = document.getElementById("numberInput").value.trim();
+      if (!input) {
+        alert("Please enter some numbers first.");
+        return;
+      }
+      const nums = input.split(",").map(n => n.trim()).filter(n => n !== "");
+      let shuffled = [...nums].sort(() => Math.random() - 0.5);
+
+      document.getElementById("result").style.display = "block";
+      document.getElementById("result").innerHTML = 
+        `<strong>Shuffled Order:</strong><br>${shuffled.join(", ")}`;
+    }
+  </script>
+</body>
+</html>

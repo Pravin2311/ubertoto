@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Polls | Ubertoto</title>
+  <meta name="description" content="Join Ubertoto Community Polls. Vote on lucky numbers, favorite combinations, and see what others think. Entertainment only.">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header, footer {
+      padding: 1rem;
+      background: #000;
+    }
+    h1 {
+      color: gold;
+    }
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    .card {
+      background: #1a1a1a;
+      border: 2px solid gold;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 700px;
+      width: 100%;
+      text-align: left;
+    }
+    .poll-question {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      color: gold;
+    }
+    .option {
+      margin: 0.5rem 0;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background: gold;
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #e6c200;
+    }
+    .result-bar {
+      background: #444;
+      border-radius: 8px;
+      margin: 0.3rem 0;
+      overflow: hidden;
+    }
+    .fill {
+      background: gold;
+      padding: 0.3rem;
+      text-align: left;
+      white-space: nowrap;
+      font-size: 0.9rem;
+      color: #000;
+    }
+    .back-home {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #444;
+      color: gold;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .seo-text {
+      text-align: left;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+    .seo-text h2 {
+      color: gold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🗳️ Community Polls</h1>
+    <p>Vote & see what the Ubertoto community thinks</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <div id="poll">
+        <div class="poll-question">Which number feels the luckiest to you?</div>
+        <div class="option"><input type="radio" name="vote" value="7"> 7</div>
+        <div class="option"><input type="radio" name="vote" value="11"> 11</div>
+        <div class="option"><input type="radio" name="vote" value="22"> 22</div>
+        <div class="option"><input type="radio" name="vote" value="33"> 33</div>
+        <button onclick="submitVote()">Submit Vote</button>
+      </div>
+
+      <div id="results" style="display:none; margin-top:1rem;">
+        <h3 style="color:gold;">Poll Results</h3>
+        <div id="resultBars"></div>
+      </div>
+
+      <a href="index.html" class="back-home">⬅️ Back to Home</a>
+    </div>
+  </main>
+
+  <div class="seo-text">
+    <h2>About Community Polls</h2>
+    <p>
+      Ubertoto’s <strong>Community Polls</strong> allow you to share your opinion and see how others think about 
+      <em>lucky numbers</em>, <em>favorite patterns</em>, and <em>popular combinations</em>.  
+      It’s a fun way to engage with the community and discover trends.
+    </p>
+    <h3>Why Polls are Fun</h3>
+    <ul>
+      <li>Instant results show what others prefer.</li>
+      <li>Creates excitement around lucky numbers.</li>
+      <li>Boosts community engagement.</li>
+    </ul>
+    <p>
+      Whether you believe in number luck or just enjoy participating, our polls add an extra 
+      layer of fun to your Ubertoto experience.
+    </p>
+    <p><strong>Disclaimer:</strong> This is for entertainment purposes only. Ubertoto does not promote gambling.</p>
+  </div>
+
+  <footer style="background-color:#0a0a0a; color:#fff; padding:20px 10px; font-family:Arial, sans-serif; text-align:center; margin-top:20px; border-top:1px solid #222;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:center; gap:15px; font-size:0.85rem;">
+
+    <!-- Links -->
+    <div>
+      <a href="about.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">About</a>|
+      <a href="contact.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Contact</a>|
+      <a href="privacy.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Privacy Policy</a>|
+      <a href="disclaimer.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Disclaimer</a>
+    </div>
+
+    <!-- Disclaimer -->
+    <div style="width:100%; margin-top:10px; font-size:0.75rem; color:#888;">
+      ⚠️ Ubertoto is an entertainment website only. No real money betting, lottery, or gambling services are provided.
+    </div>
+
+    <!-- Copyright -->
+    <div style="width:100%; margin-top:5px; font-size:0.75rem; color:#888;">
+      &copy; 2025 Ubertoto. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+
+  <script>
+    let votes = {7: 0, 11: 0, 22: 0, 33: 0};
+
+    function submitVote() {
+      const options = document.getElementsByName("vote");
+      let selected = null;
+      for (let opt of options) {
+        if (opt.checked) selected = opt.value;
+      }
+      if (!selected) {
+        alert("Please select an option before voting!");
+        return;
+      }
+      votes[selected]++;
+
+      document.getElementById("poll").style.display = "none";
+      document.getElementById("results").style.display = "block";
+      showResults();
+    }
+
+    function showResults() {
+      const total = Object.values(votes).reduce((a, b) => a + b, 0);
+      const container = document.getElementById("resultBars");
+      container.innerHTML = "";
+
+      for (let num in votes) {
+        const percent = total ? ((votes[num] / total) * 100).toFixed(1) : 0;
+        container.innerHTML += `
+          <div>${num} — ${percent}%</div>
+          <div class="result-bar"><div class="fill" style="width:${percent}%">${votes[num]} votes</div></div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>

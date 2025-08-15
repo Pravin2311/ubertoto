@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lucky Spin • IndoNumbersHub</title>
+  <meta name="description" content="Spin the wheel to get a random 1–3 digit lucky number. Mobile-friendly Lucky Spin game." />
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --panel:#102032;
+      --accent:#00f5d4;
+      --accent-2:#ffd60a;
+      --card:#132132;
+      --muted:#9aa6bf;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0}
+    body{
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background: linear-gradient(180deg,var(--bg), #0b1220);
+      color:#ffffff;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:18px;
+    }
+
+    header{
+      width:100%;
+      max-width:760px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;
+      border:1px solid rgba(0,255,204,0.06);
+      padding:16px;
+      text-align:center;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+    }
+    header h1{margin:0;font-size:20px;color:var(--accent)}
+    header p{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+    .stage{
+      width:100%;
+      max-width:440px;
+      margin:18px 0 6px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+    }
+
+    /* wheel area */
+    .wheel-frame{
+      position:relative;
+      width:92%;
+      max-width:360px;
+      aspect-ratio:1/1;
+      margin:0 auto;
+      border-radius:50%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+      border: 4px solid rgba(0,255,204,0.08);
+    }
+
+    canvas#wheelCanvas{
+      width:100%;
+      height:100%;
+      display:block;
+      border-radius:50%;
+      transform-origin:50% 50%;
+    }
+
+    /* pointer */
+    .pointer {
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      top:-22px;
+      z-index:30;
+      pointer-events:none;
+      width:0;height:0;
+      border-left:18px solid transparent;
+      border-right:18px solid transparent;
+      border-bottom:28px solid var(--accent-2);
+      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.4));
+    }
+
+    /* controls */
+    .controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;width:100%}
+    button.btn{
+      background:var(--accent);
+      color:#042227;
+      border:none;
+      padding:12px 18px;
+      border-radius:10px;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow:0 8px 18px rgba(0,0,0,0.45);
+    }
+    button.btn:active{transform:translateY(1px)}
+    button.btn.secondary{
+      background:var(--card);
+      color:var(--accent);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    button.btn[disabled]{opacity:.5;cursor:default}
+
+    .result{
+      margin-top:10px;
+      min-height:28px;
+      font-size:18px;
+      color:var(--accent-2);
+      text-align:center;
+    }
+
+    .tips{
+      margin-top:10px;
+      width:100%;
+      max-width:440px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .back-home{
+      margin-top:14px;
+      background:var(--accent-2);
+      color:#07151a;
+      padding:10px 16px;
+      text-decoration:none;
+      border-radius:10px;
+      font-weight:700;
+      display:inline-block;
+    }
+
+    /* responsive tweaks */
+    @media (max-width:420px){
+      header h1{font-size:18px}
+      .pointer{top:-18px;border-left:14px solid transparent;border-right:14px solid transparent;border-bottom:22px solid var(--accent-2)}
+      button.btn{padding:10px 14px;font-size:14px}
+      .result{font-size:16px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎡 Lucky Spin</h1>
+    <p>Spin the wheel to get a random 1–3 digit lucky number.</p>
+  </header>
+
+  <div class="stage">
+    <div class="wheel-frame">
+      <div class="pointer"></div>
+      <canvas id="wheelCanvas"></canvas>
+    </div>
+
+    <div class="controls">
+      <button id="spinBtn" class="btn">Spin 🎲</button>
+      <button id="dailyBtn" class="btn secondary">Show Today's</button>
+    </div>
+
+    <div class="result" id="result">🌞 Today's Lucky Spin will appear here</div>
+
+    <div class="tips">
+      <strong>How to use & tips</strong>
+      <ul>
+        <li>Tap <strong>Spin</strong> to spin the wheel. The pointer shows your winning sector.</li>
+        <li>Each spin generates a random 1–3 digit lucky number.</li>
+        <li>Use <strong>Show Today's</strong> to see your daily number.</li>
+        <li>For entertainment only — not for gambling.</li>
+      </ul>
+    </div>
+
+    <a class="back-home" href="index.html">🏠 Back to Home</a>
+  </div>
+<footer style="background-color:#0a0a0a; color:#fff; padding:20px 10px; font-family:Arial, sans-serif; text-align:center; margin-top:20px; border-top:1px solid #222;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:center; gap:15px; font-size:0.85rem;">
+
+    <!-- Links -->
+    <div>
+      <a href="about.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">About</a>|
+      <a href="contact.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Contact</a>|
+      <a href="privacy.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Privacy Policy</a>|
+      <a href="disclaimer.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Disclaimer</a>
+    </div>
+
+    <!-- Disclaimer -->
+    <div style="width:100%; margin-top:10px; font-size:0.75rem; color:#888;">
+      ⚠️ Ubertoto is an entertainment website only. No real money betting, lottery, or gambling services are provided.
+    </div>
+
+    <!-- Copyright -->
+    <div style="width:100%; margin-top:5px; font-size:0.75rem; color:#888;">
+      &copy; 2025 Ubertoto. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+  <script>
+  (function(){
+    const segments = 12; // number of sectors
+    const colors = [
+      '#FF6B6B','#4D96FF','#FFD66B','#B793FF','#4EEA9B','#FF8AD6',
+      '#FFA86B','#61D4FF','#8AFFC1','#FF6FA1','#FFD9A6','#D6C3FF'
+    ];
+
+    const canvas = document.getElementById('wheelCanvas');
+    const ctx = canvas.getContext('2d');
+    const spinBtn = document.getElementById('spinBtn');
+    const dailyBtn = document.getElementById('dailyBtn');
+    const resultEl = document.getElementById('result');
+    const frame = document.querySelector('.wheel-frame');
+
+    let currentRotation = 0;
+    let isSpinning = false;
+
+    function resizeCanvas(){
+      const rect = frame.getBoundingClientRect();
+      const size = Math.min(rect.width, rect.height);
+      const dpr = Math.max(1, window.devicePixelRatio || 1);
+      canvas.width = size * dpr;
+      canvas.height = size * dpr;
+      canvas.style.width = size + 'px';
+      canvas.style.height = size + 'px';
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      drawWheel();
+      canvas.style.transform = `rotate(${currentRotation}deg)`;
+    }
+    window.addEventListener('resize', resizeCanvas);
+
+    function drawWheel(){
+      const W = canvas.width / (window.devicePixelRatio||1);
+      const H = canvas.height / (window.devicePixelRatio||1);
+      const cx = W/2, cy = H/2;
+      const r = Math.min(cx,cy) - 6;
+      const seg = (2*Math.PI)/segments;
+
+      ctx.clearRect(0,0,W,H);
+
+      for(let i=0;i<segments;i++){
+        const startA = -Math.PI/2 + i*seg;
+        const endA = startA + seg;
+        ctx.beginPath();
+        ctx.moveTo(cx,cy);
+        ctx.arc(cx,cy,r,startA,endA);
+        ctx.closePath();
+        ctx.fillStyle = colors[i % colors.length];
+        ctx.fill();
+        ctx.lineWidth=1;
+        ctx.strokeStyle='rgba(0,0,0,0.2)';
+        ctx.stroke();
+      }
+
+      ctx.beginPath();
+      ctx.arc(cx,cy,r*0.15,0,Math.PI*2);
+      ctx.fillStyle='rgba(0,0,0,0.15)';
+      ctx.fill();
+    }
+
+    function getIndexFromRotation(rotationDeg){
+      const segDeg = 360 / segments;
+      const deg = ((rotationDeg % 360)+360)%360;
+      const value = (270 - deg + 360)%360;
+      return Math.floor(value / segDeg);
+    }
+
+    function spinWheel(){
+      if(isSpinning) return;
+      isSpinning = true;
+      spinBtn.disabled = true; dailyBtn.disabled = true;
+
+      const extra = Math.floor(Math.random()*360);
+      const turns = Math.floor(Math.random()*3)+3;
+      const spinAngle = turns*360 + extra;
+      currentRotation += spinAngle;
+
+      canvas.style.transition = 'transform 4s cubic-bezier(0.25,0.9,0.2,1)';
+      canvas.style.transform = `rotate(${currentRotation}deg)`;
+
+      const onEnd = ()=>{
+        canvas.removeEventListener('transitionend', onEnd);
+        canvas.style.transition='';
+        const index = getIndexFromRotation(currentRotation);
+        const luckyNumber = Math.floor(Math.random()*999)+1;
+        resultEl.textContent = `🎉 Your Lucky Number: ${luckyNumber}`;
+        isSpinning=false;
+        spinBtn.disabled=false; dailyBtn.disabled=false;
+      };
+      canvas.addEventListener('transitionend', onEnd);
+    }
+
+    function seededRandom(seed){
+      const x = Math.sin(seed)*10000;
+      return x - Math.floor(x);
+    }
+    function showDaily(){
+      const today = new Date();
+      const seed = today.getFullYear()*10000 + (today.getMonth()+1)*100 + today.getDate();
+      const number = Math.floor(seededRandom(seed)*999)+1;
+      resultEl.textContent = `🌞 Today's Lucky Number: ${number}`;
+    }
+
+    spinBtn.addEventListener('click', spinWheel);
+    dailyBtn.addEventListener('click', showDaily);
+
+    resizeCanvas();
+    showDaily();
+  })();
+  </script>
+</body>
+</html>

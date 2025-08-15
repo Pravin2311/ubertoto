@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Patum Generator | IndoNumbersHub</title>
+  <meta name="description" content="Generate random Patum numbers for fun with this free tool.">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <style>
+  * {margin: 0; padding: 0; box-sizing: border-box; font-family: "Roboto Mono", monospace;}
+  body {
+    background: #1b1f2f;
+    color: #e6e6e6;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+  }
+  header {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #00ffcc;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #00ffcc;
+  }
+  header h1 { font-size: 1.8rem; margin-bottom: 6px; }
+  header p { font-size: 0.95rem; opacity: 0.85; }
+  .container {
+    max-width: 500px;
+    margin: auto;
+    background: #252a3d;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  }
+  h2 { color: #00ffcc; margin-bottom: 15px; }
+  label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #bbb;
+    font-size: 0.95rem;
+  }
+  input, button {
+    background: #111520;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 10px;
+    color: #00ffcc;
+    font-size: 1rem;
+    margin: 8px 0;
+    width: 100%;
+    outline: none;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+  }
+  input:focus { border-color: #00ffcc; box-shadow: 0 0 8px rgba(0,255,204,0.4); }
+  button {
+    background: #00ffcc;
+    color: #111520;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+  }
+  button:hover { background: #00e6b8; box-shadow: 0 0 10px rgba(0,255,204,0.5); }
+  .result {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #ffea00;
+    word-wrap: break-word;
+    padding: 10px;
+    border-radius: 8px;
+    background: #111520;
+  }
+  #copyBtn, #saveBtn { display: none; margin-top: 10px; }
+  footer {
+    background: #111520;
+    color: #888;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+    font-size: 0.85rem;
+    border-top: 1px solid #222;
+  }
+  .tips-container { margin-top: 20px; }
+  .tips-content {
+    display: none;
+    background: #1a1d2e;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    text-align: left;
+    font-size: 0.95rem;
+    color: #ccc;
+  }
+  .tips-content ul { margin-left: 20px; }
+  .tips-content li { margin-bottom: 6px; }
+
+  /* Back to Home button */
+  .back-home {
+    background: #ffcc00;
+    color: #111520;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 10px;
+  }
+  .back-home:hover { background: #e6b800; }
+
+  /* Mobile responsiveness */
+  @media (max-width: 480px) {
+    header h1 { font-size: 1.5rem; }
+    header p { font-size: 0.85rem; }
+    h2 { font-size: 1.2rem; }
+    label { font-size: 0.9rem; }
+    input, button { font-size: 0.95rem; padding: 8px; }
+    .result { font-size: 1.2rem; }
+    .tips-content { font-size: 0.85rem; }
+  }
+</style>
+
+</head>
+<body>
+  <header>
+    <h1>Random Patum Generator</h1>
+    <p>Generate fun random numbers instantly!</p>
+  </header>
+
+  <div class="container">
+    <h2>Generate Your Lucky Numbers 🎲</h2>
+    <label for="count">How many numbers?</label>
+    <input type="number" id="count" value="4" min="1" max="10">
+    <label for="digits">Digits per number</label>
+    <input type="number" id="digits" value="4" min="2" max="6">
+    <button onclick="generatePatum()">Generate</button>
+
+    <div class="result" id="result">Your numbers will appear here</div>
+    <button id="copyBtn" onclick="copyPatum()">📋 Copy Numbers</button>
+    <button id="saveBtn" onclick="saveImage()">💾 Save as Image</button>
+
+    <div style="margin-top:15px; font-size:0.9rem; opacity:0.8;">Daily Lucky Numbers below ⬇️</div>
+    <div class="result" id="dailyResult"></div>
+
+    <div class="tips-container">
+      <button onclick="toggleTips()">💡 How to Use & Tips</button>
+      <div class="tips-content" id="tipsContent">
+        <ul>
+          <li>Set the number of random numbers you want to generate.</li>
+          <li>Choose the number of digits per number (2-6 recommended).</li>
+          <li>Click “Generate” to see your lucky Patum numbers.</li>
+          <li>Use “Copy Numbers” to quickly save your numbers to clipboard.</li>
+          <li>Use “Save as Image” to download the numbers as a shareable image.</li>
+          <li>Check the “Daily Lucky Numbers” for a consistent set that changes every day.</li>
+          <li>Numbers are for fun only and not guaranteed for gambling purposes.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <button class="back-home" onclick="goHome()">🏠 Back to Home</button>
+  
+  <footer style="background-color:#0a0a0a; color:#fff; padding:20px 10px; font-family:Arial, sans-serif; text-align:center; margin-top:20px; border-top:1px solid #222;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:center; gap:15px; font-size:0.85rem;">
+
+    <!-- Links -->
+    <div>
+      <a href="about.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">About</a>|
+      <a href="contact.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Contact</a>|
+      <a href="privacy.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Privacy Policy</a>|
+      <a href="disclaimer.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Disclaimer</a>
+    </div>
+
+    <!-- Disclaimer -->
+    <div style="width:100%; margin-top:10px; font-size:0.75rem; color:#888;">
+      ⚠️ Ubertoto is an entertainment website only. No real money betting, lottery, or gambling services are provided.
+    </div>
+
+    <!-- Copyright -->
+    <div style="width:100%; margin-top:5px; font-size:0.75rem; color:#888;">
+      &copy; 2025 Ubertoto. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script>
+    // Toggle Tips
+    function toggleTips() {
+      const tips = document.getElementById("tipsContent");
+      tips.style.display = tips.style.display === "block" ? "none" : "block";
+    }
+    function goHome() {
+  window.location.href = "index.html"; // replace with your home page URL
+}
+
+    // Regular Random Patum
+    function generatePatum() {
+      const count = parseInt(document.getElementById("count").value);
+      const digits = parseInt(document.getElementById("digits").value);
+      let results = [];
+
+      for (let i = 0; i < count; i++) {
+        let num = "";
+        for (let d = 0; d < digits; d++) {
+          num += Math.floor(Math.random() * 10);
+        }
+        results.push(num);
+      }
+
+      const resultDiv = document.getElementById("result");
+      resultDiv.textContent = results.join(" • ");
+
+      document.getElementById("copyBtn").style.display = "block";
+      document.getElementById("saveBtn").style.display = "block";
+    }
+
+    function copyPatum() {
+      const resultText = document.getElementById("result").textContent;
+      navigator.clipboard.writeText(resultText).then(() => {
+        const btn = document.getElementById("copyBtn");
+        btn.textContent = "✅ Copied!";
+        setTimeout(() => { btn.textContent = "📋 Copy Numbers"; }, 1500);
+      });
+    }
+
+    function saveImage() {
+      const resultDiv = document.getElementById("result");
+      html2canvas(resultDiv, {backgroundColor: "#1b1f2f"}).then(canvas => {
+        const link = document.createElement("a");
+        link.download = "Patum_Numbers.png";
+        link.href = canvas.toDataURL();
+        link.click();
+      });
+    }
+
+    // Daily Random Patum
+    function generateDailyPatum() {
+      const dailyDiv = document.getElementById("dailyResult");
+      const today = new Date();
+      const seed = today.getFullYear() + today.getMonth() + today.getDate();
+
+      function seededRandom(s) {
+        const x = Math.sin(s) * 10000;
+        return x - Math.floor(x);
+      }
+
+      let results = [];
+      const count = 4;
+      const digits = 4;
+
+      for (let i = 0; i < count; i++) {
+        let num = "";
+        for (let d = 0; d < digits; d++) {
+          num += Math.floor(seededRandom(seed + i + d) * 10);
+        }
+        results.push(num);
+      }
+
+      dailyDiv.textContent = results.join(" • ");
+    }
+
+    generateDailyPatum(); // auto on page load
+  </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zodiac & Astrology Numbers | Ubertoto</title>
+  <meta name="description" content="Discover your zodiac lucky numbers with Ubertoto. Astrology-based fun number generator for Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, and Pisces.">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header, footer {
+      padding: 1rem;
+      background: #000;
+    }
+    h1 {
+      color: gold;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+    .card {
+      background: #1a1a1a;
+      border: 2px solid gold;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    select {
+      padding: 0.6rem;
+      border: 2px solid gold;
+      border-radius: 8px;
+      background: #000;
+      color: gold;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      width: 80%;
+    }
+    button {
+      padding: 0.7rem 1.5rem;
+      border: none;
+      background: gold;
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    button:hover {
+      background: #e6c200;
+    }
+    .result {
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    .numbers {
+      font-size: 1.6rem;
+      color: gold;
+      margin-top: 0.5rem;
+    }
+    .back-home {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #444;
+      color: gold;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .explainer {
+      max-width: 900px;
+      text-align: left;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+    .explainer h2 {
+      color: gold;
+      margin-top: 0;
+    }
+    .explainer p {
+      margin: 0.8rem 0;
+      color: #ddd;
+    }
+    .explainer strong {
+      color: gold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>✨ Zodiac & Astrology Numbers</h1>
+    <p>Find your fun daily lucky numbers</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <label for="zodiac">Choose Your Zodiac Sign:</label><br>
+      <select id="zodiac">
+        <option value="">-- Select --</option>
+        <option>♈ Aries</option>
+        <option>♉ Taurus</option>
+        <option>♊ Gemini</option>
+        <option>♋ Cancer</option>
+        <option>♌ Leo</option>
+        <option>♍ Virgo</option>
+        <option>♎ Libra</option>
+        <option>♏ Scorpio</option>
+        <option>♐ Sagittarius</option>
+        <option>♑ Capricorn</option>
+        <option>♒ Aquarius</option>
+        <option>♓ Pisces</option>
+      </select>
+      <br>
+      <button onclick="generateLuckyNumbers()">🔮 Reveal My Numbers</button>
+
+      <div class="result" id="result"></div>
+      <a href="index.html" class="back-home">⬅️ Back to Home</a>
+    </div>
+
+    <section class="explainer">
+      <h2>🔮 What Are Zodiac Lucky Numbers?</h2>
+      <p>
+        Zodiac lucky numbers are <strong>astrology-inspired number combinations</strong> that many people use for fun, guidance, or inspiration. 
+        Each zodiac sign – from <strong>Aries to Pisces</strong> – is traditionally associated with certain numbers believed to reflect the energy and traits of that sign.
+      </p>
+      <p>
+        For example, <strong>Aries</strong> often connects with bold, adventurous numbers, while <strong>Virgo</strong> may align with practical and orderly digits. 
+        Our Ubertoto generator gives you <em>randomized daily lucky numbers</em> while also tying in zodiac-specific energy messages to make your experience unique.
+      </p>
+      <h2>✨ Why Use Ubertoto’s Astrology Number Tool?</h2>
+      <p>
+        Unlike generic number pickers, this tool blends <strong>astrology symbolism</strong> with fresh number draws. It’s designed to be:
+      </p>
+      <ul>
+        <li>🎯 <strong>Fun & engaging</strong> – perfect for daily entertainment</li>
+        <li>🌌 <strong>Astrology-inspired</strong> – messages customized per zodiac sign</li>
+        <li>📱 <strong>Mobile-friendly</strong> – smooth, fast, and themed in Ubertoto style</li>
+      </ul>
+      <p>
+        Whether you’re curious about <strong>horoscope numbers, daily lucky numbers, or astrology-inspired predictions</strong>, this tool gives you a playful way to explore the stars.
+      </p>
+      <p><em>⚠️ Disclaimer: This feature is for entertainment only. Numbers are randomly generated and should not be taken as gambling advice.</em></p>
+    </section>
+  </main>
+
+  <footer style="background-color:#0a0a0a; color:#fff; padding:20px 10px; font-family:Arial, sans-serif; text-align:center; margin-top:20px; border-top:1px solid #222;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:center; gap:15px; font-size:0.85rem;">
+
+    <!-- Links -->
+    <div>
+      <a href="about.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">About</a>|
+      <a href="contact.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Contact</a>|
+      <a href="privacy.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Privacy Policy</a>|
+      <a href="disclaimer.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Disclaimer</a>
+    </div>
+
+    <!-- Disclaimer -->
+    <div style="width:100%; margin-top:10px; font-size:0.75rem; color:#888;">
+      ⚠️ Ubertoto is an entertainment website only. No real money betting, lottery, or gambling services are provided.
+    </div>
+
+    <!-- Copyright -->
+    <div style="width:100%; margin-top:5px; font-size:0.75rem; color:#888;">
+      &copy; 2025 Ubertoto. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+
+  <script>
+    const zodiacMessages = {
+      "Aries": "Bold energy today favors adventurous picks.",
+      "Taurus": "Steady vibes align with repeating digits.",
+      "Gemini": "Dual numbers might bring balance.",
+      "Cancer": "Soft luck is tied to even numbers.",
+      "Leo": "Shining strength boosts high numbers.",
+      "Virgo": "Practical energy favors tidy sequences.",
+      "Libra": "Balanced odds and evens bring harmony.",
+      "Scorpio": "Mysterious luck flows with prime numbers.",
+      "Sagittarius": "Optimism favors numbers ending in 7.",
+      "Capricorn": "Disciplined vibes align with structured sets.",
+      "Aquarius": "Quirky luck shines on unusual combos.",
+      "Pisces": "Dreamy flow connects with repeating endings."
+    };
+
+    function generateLuckyNumbers() {
+      const zodiac = document.getElementById("zodiac").value;
+      const resultDiv = document.getElementById("result");
+
+      if (!zodiac) {
+        resultDiv.innerHTML = "<p>Please select a zodiac sign ✨</p>";
+        return;
+      }
+
+      const sign = zodiac.split(" ")[1]; 
+      const numbers = Array.from({length: 5}, () => Math.floor(Math.random() * 99) + 1);
+      const msg = zodiacMessages[sign] || "Positive vibes bring new possibilities.";
+
+      resultDiv.innerHTML = `
+        <p><strong>${zodiac}</strong></p>
+        <p>${msg}</p>
+        <div class="numbers">Your Lucky Numbers: ${numbers.join(", ")}</div>
+      `;
+    }
+  </script>
+</body>
+</html>

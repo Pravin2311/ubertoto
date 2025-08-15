@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pattern Spotter | Ubertoto</title>
+  <meta name="description" content="Discover hidden number patterns with Ubertoto's Pattern Spotter. Find sequences, repeats, and mirrored digits to boost your lucky picks. Entertainment only.">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header, footer {
+      padding: 1rem;
+      background: #000;
+    }
+    h1 {
+      color: gold;
+      margin-bottom: 0.5rem;
+    }
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    .card {
+      background: #1a1a1a;
+      border: 2px solid gold;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 650px;
+      width: 100%;
+      text-align: center;
+    }
+    input[type="text"] {
+      width: 80%;
+      padding: 0.7rem;
+      border: 2px solid gold;
+      border-radius: 8px;
+      font-size: 1rem;
+      text-align: center;
+      background: #222;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    button {
+      padding: 0.7rem 1.5rem;
+      border: none;
+      background: gold;
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 0.5rem;
+    }
+    button:hover {
+      background: #e6c200;
+    }
+    .back-home {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #444;
+      color: gold;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    #result {
+      margin-top: 1rem;
+      text-align: left;
+      background: #222;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid #555;
+      color: #fff;
+      font-size: 0.95rem;
+    }
+    #seo {
+      text-align: left;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      color: #ddd;
+      line-height: 1.6;
+    }
+    #seo h2 {
+      color: gold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🔎 Pattern Spotter</h1>
+    <p>Find hidden sequences, repeats, and mirrored digits</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <input type="text" id="numbersInput" placeholder="Enter numbers (e.g. 12, 23, 34, 44)">
+      <br>
+      <button onclick="analyzePatterns()">✨ Spot Patterns</button>
+      <button onclick="randomizeNumbers()">🎲 Randomize</button>
+      <a href="index.html" class="back-home">⬅️ Back to Home</a>
+      <div id="result"></div>
+    </div>
+  </main>
+
+  <section id="seo">
+    <h2>Why Use Ubertoto's Pattern Spotter?</h2>
+    <p>
+      Ubertoto's <strong>Pattern Spotter</strong> is designed to help players discover <em>hidden number trends</em> 
+      such as <strong>sequences</strong> (12-13-14), <strong>repeats</strong> (11, 22, 33), and <strong>mirror patterns</strong> 
+      (12-21, 34-43). These patterns are fun to explore and may inspire your lucky picks.
+    </p>
+    <p>
+      By analyzing <strong>number frequency</strong> and checking for repeated digits or mirrored combinations, 
+      you can boost engagement and add another layer of excitement to your play. 
+      This tool is for <strong>entertainment only</strong> and does not promote or guarantee gambling results.
+    </p>
+    <p>
+      Explore our other modules like <strong>Lucky Number Generator</strong>, 
+      <strong>Dream Dictionary</strong>, and <strong>Hot & Cold Tracker</strong> to complete your lucky journey with Ubertoto.
+    </p>
+  </section>
+
+ <footer style="background-color:#0a0a0a; color:#fff; padding:20px 10px; font-family:Arial, sans-serif; text-align:center; margin-top:20px; border-top:1px solid #222;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:center; gap:15px; font-size:0.85rem;">
+
+    <!-- Links -->
+    <div>
+      <a href="about.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">About</a>|
+      <a href="contact.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Contact</a>|
+      <a href="privacy.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Privacy Policy</a>|
+      <a href="disclaimer.html" style="color:#00ffcc; text-decoration:none; margin:0 8px;">Disclaimer</a>
+    </div>
+
+    <!-- Disclaimer -->
+    <div style="width:100%; margin-top:10px; font-size:0.75rem; color:#888;">
+      ⚠️ Ubertoto is an entertainment website only. No real money betting, lottery, or gambling services are provided.
+    </div>
+
+    <!-- Copyright -->
+    <div style="width:100%; margin-top:5px; font-size:0.75rem; color:#888;">
+      &copy; 2025 Ubertoto. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+
+  <script>
+    function analyzePatterns() {
+      const input = document.getElementById("numbersInput").value.trim();
+      if (!input) {
+        document.getElementById("result").innerHTML = "<em>Please enter some numbers.</em>";
+        return;
+      }
+
+      const nums = input.split(/[\s,]+/).map(n => n.trim()).filter(n => n);
+      let findings = [];
+
+      // Check for repeats
+      let repeats = nums.filter((n, i, arr) => arr.indexOf(n) !== i);
+      if (repeats.length) findings.push("🔁 Repeated numbers found: " + [...new Set(repeats)].join(", "));
+
+      // Check for sequences
+      let seq = [];
+      for (let i = 0; i < nums.length - 1; i++) {
+        if (parseInt(nums[i+1]) === parseInt(nums[i]) + 1) {
+          seq.push(nums[i] + "→" + nums[i+1]);
+        }
+      }
+      if (seq.length) findings.push("📈 Sequence detected: " + seq.join(", "));
+
+      // Check for mirrored numbers
+      let mirrors = [];
+      nums.forEach(n => {
+        let rev = n.split("").reverse().join("");
+        if (nums.includes(rev) && rev !== n) mirrors.push(n + "↔" + rev);
+      });
+      if (mirrors.length) findings.push("🪞 Mirrored patterns: " + [...new Set(mirrors)].join(", "));
+
+      // If nothing found
+      if (!findings.length) findings.push("❌ No strong patterns detected.");
+
+      document.getElementById("result").innerHTML = "<strong>Results:</strong><br>" + findings.join("<br>");
+    }
+
+    function randomizeNumbers() {
+      const arr = [];
+      for (let i = 0; i < 5; i++) {
+        arr.push(Math.floor(Math.random() * 90) + 10); // 2-digit random numbers
+      }
+      document.getElementById("numbersInput").value = arr.join(", ");
+      analyzePatterns();
+    }
+  </script>
+</body>
+</html>
